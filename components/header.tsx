@@ -74,7 +74,7 @@ export default function Header() {
         leaveFrom="translate-x-0"
         leaveTo="-translate-x-full"
       >
-        <nav className="flex flex-col top-0 left-0 fixed h-full w-[60%] backdrop-blur-md gap-9 text-xl items-center justify-evenly md:text-2xl md:font-semibold md:gap-12 font-mono">
+        <nav className="bg-[#f5f5e3] dark:bg-[#030014] flex flex-col top-0 left-0 fixed h-full w-[60%] backdrop-blur-md gap-9 text-xl items-center justify-evenly md:text-2xl md:font-semibold md:gap-12 font-mono">
           {navLinks.map((navLink) => {
             return (
               <Link

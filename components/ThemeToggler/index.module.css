@@ -1,0 +1,11 @@
+.themeToggle {
+  @apply ease-linear duration-300 rounded flex items-center justify-center h-8 w-8;
+}
+
+.sun {
+  @apply h-6 w-6;
+}
+
+.moon {
+  @apply h-6 w-6;
+}

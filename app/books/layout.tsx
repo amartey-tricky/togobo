@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+const title = "Dr. Ambrose K. Togobo - Books";
+const description =
+  "Explore the insightful works of Dr. Ambrose K. Togobo, covering topics from individual responsibility to the nature of the universe and healing.";
+
 export default function BookLayout({
   children
 }: Readonly<{ children: React.ReactNode }>) {

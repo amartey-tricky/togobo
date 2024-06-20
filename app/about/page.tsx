@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import type { Metadata } from "next";
 
 const Books = [
   {
@@ -19,6 +19,10 @@ const Books = [
     year: 2024,
   },
 ];
+
+const title = "Dr. Ambrose K. Togobo - About";
+const description =
+  "Explore the insightful works of Dr. Ambrose K. Togobo, covering topics from individual responsibility to the nature of the universe and healing.";
 
 export default function Page() {
   return (

@@ -57,6 +57,7 @@ export default function ContactForm() {
           id="name"
           {...register("name")}
           placeholder="John Doe"
+          autoComplete="name"
           className="px-4 py-3 text-xl font-semibold text-slate-600 dark:text-slate-300 bg-[#f5f5e3] dark:bg-[#030014] border-2 rounded-lg transition duration-200 ease-linear focus:outline-none focus-visible:ring-2 ring-[#191970] dark:ring-[#f5f5e3]"
           aria-invalid={errors.name ? "true" : "false"}
         />
@@ -74,6 +75,7 @@ export default function ContactForm() {
           inputMode="email"
           {...register("email")}
           placeholder="name@email.com"
+          autoComplete="email"
           className="px-4 py-3 text-xl font-semibold text-slate-600 dark:text-slate-300 bg-[#f5f5e3] dark:bg-[#030014] border-2 rounded-lg transition duration-200 ease-linear focus:outline-none focus-visible:ring-2 ring-[#191970] dark:ring-[#f5f5e3]"
           aria-invalid={errors.email ? "true" : "false"}
         />

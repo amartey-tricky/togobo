@@ -15,7 +15,7 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
 });
 
-const title = "Dr. Ambrose K. Togobo - Books";
+const title = "Dr. Ambrose K. Togobo";
 const description =
   "Explore the insightful works of Dr. Ambrose K. Togobo, covering topics from individual responsibility to the nature of the universe and healing.";
 

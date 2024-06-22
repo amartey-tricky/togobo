@@ -4,6 +4,9 @@ import { useForm } from "react-hook-form";
 import { valibotResolver } from "@hookform/resolvers/valibot";
 import { ContactSchema } from "@/utils/schema";
 import type { ContactFormData } from "@/utils/schema";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
+
 
 export default function ContactForm() {
   const {
@@ -15,8 +18,36 @@ export default function ContactForm() {
     resolver: valibotResolver(ContactSchema),
   });
 
+  const onSubmit = async (data: ContactFormData) => {
+
+    const templateParams = {
+      to_name: "Ambrose Togobo",
+      from_name: data.name,
+      from_email: data.email,
+      message: data.message,
+    }
+
+    try {
+      const result = await emailjs.send( 
+        process.env.NEXT_EMAILJS_SERVICEID as string,
+        process.env.NEXT_EMAILJS_TEMPLATEID as string,
+        templateParams,
+        process.env.NEXT_EMAILJS_PUBLICKEY as string
+      );
+      toast.success("Message sent successfully!");
+      console.log(result.text);
+      reset();
+    } catch (error) {
+      toast.error("Message failed to send!");
+      console.error(error);
+    }
+  }
+
   return (
-    <form className="space-y-4 lg:space-y-6 flex flex-col items-center w-full">
+    <form
+    onSubmit={handleSubmit(onSubmit)}
+      className="space-y-4 lg:space-y-6 flex flex-col items-center w-full"
+    >
       <div>
         <label htmlFor="name" className="block mb-2">
           Name
@@ -66,7 +97,11 @@ export default function ContactForm() {
           <p className="text-red-500 mt-1">{errors.message.message}</p>
         )}
       </div>
-      <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+      <button
+        type="submit"
+        onClick={() => console.log("Button clicked")}
+        className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 cursor-pointer"
+      >
         Send Message
       </button>
     </form>

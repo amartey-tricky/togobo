@@ -1,4 +1,28 @@
 import ContactForm from "@/components/contactform";
+import type { Metadata } from "next";
+
+const title = "Dr. Ambrose K. Togobo - Contact";
+const description = "Get in touch with Dr. Ambrose K. Togobo for any inquiries or collaborations.";
+
+export const metadata: Metadata = {
+  title: title,
+  description: description,
+  openGraph: {
+    title: title,
+    description: description,
+    url: "https://ambrosetogobo.com",
+    type: "website",
+    siteName: "Ambrose Togobo",
+
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@ambrosetogobo",
+    title: title,
+    description: description,
+    creator: "@ambrosetogobo",
+  },
+};
 
 export default function Page() {
   return (

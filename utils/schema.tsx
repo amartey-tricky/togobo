@@ -2,7 +2,6 @@ import * as v from "valibot";
 
 export const ContactSchema = v.object({
   name: v.pipe(v.string(), v.nonEmpty("Enter your name")),
-  phone: v.number("Phone Number must consist of only numbers"),
   email: v.pipe(
     v.string(),
     v.trim(),

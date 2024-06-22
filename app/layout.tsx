@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/providers/ThemeProvider";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { Toaster } from "sonner"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,7 +19,29 @@ const title = "Dr. Ambrose K. Togobo - Books";
 const description =
   "Explore the insightful works of Dr. Ambrose K. Togobo, covering topics from individual responsibility to the nature of the universe and healing.";
 
-export const metadata: Metadata = {};
+export const metadata: Metadata = {
+  title: title,
+  description: description,
+  openGraph: {
+    title: title,
+    description: description,
+    url: "https://ambrosetogobo.com",
+    type: "website",
+    siteName: "Ambrose Togobo",
+
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@ambrosetogobo",
+    title: title,
+    description: description,
+    creator: "@ambrosetogobo",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
+};
 
 export default function RootLayout({
   children,
@@ -33,6 +56,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" enableSystem defaultTheme="system">
           <Header />
           {children}
+          <Toaster position="top-center" richColors={true} />
           <Footer />
         </ThemeProvider>
       </body>

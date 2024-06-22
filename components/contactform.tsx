@@ -32,7 +32,7 @@ export default function ContactForm() {
         process.env.NEXT_EMAILJS_SERVICEID ?? "",
         process.env.NEXT_EMAILJS_TEMPLATEID ?? "",
         templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_USERID
+        process.env.NEXT_EMAILJS_PUBLICKEY
       );
       toast.success("Message sent successfully!");
       console.log(result.text);

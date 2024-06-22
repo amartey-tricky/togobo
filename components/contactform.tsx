@@ -29,10 +29,10 @@ export default function ContactForm() {
 
     try {
       const result = await emailjs.send( 
-        process.env.NEXT_EMAILJS_SERVICEID as string,
-        process.env.NEXT_EMAILJS_TEMPLATEID as string,
+        process.env.NEXT_EMAILJS_SERVICEID ?? "",
+        process.env.NEXT_EMAILJS_TEMPLATEID ?? "",
         templateParams,
-        process.env.NEXT_EMAILJS_PUBLICKEY as string
+        process.env.NEXT_PUBLIC_EMAILJS_USERID
       );
       toast.success("Message sent successfully!");
       console.log(result.text);

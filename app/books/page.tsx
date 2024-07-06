@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { libre } from "../fonts/font";
 
 const Books = [
   {
@@ -32,7 +33,7 @@ export default function Page() {
   return (
     <main className="my-8 md:my-12 lg:my-16 mx-6 md:mx-10 lg:mx-14">
       <section className="my-12 md:my-24">
-        <h1 className="text-center text-3xl md:text-4xl font-bold text-slate-600 dark:text-slate-300">
+        <h1 className={`${libre.className} text-center text-3xl md:text-4xl font-bold text-slate-600 dark:text-slate-300`}>
           Books By Dr. Ambrose Togobo
         </h1>
       </section>
